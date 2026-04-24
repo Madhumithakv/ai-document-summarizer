@@ -1,4 +1,4 @@
-def chunk_text(text, max_words=800):
+def chunk_text(text, max_words=300):
     words = text.split()
     chunks = []
 

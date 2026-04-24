@@ -1,7 +1,8 @@
 import streamlit as st
 from core.extractor import extract_text
 from core.chunker import chunk_text
-from core.summarizer import summarize_chunks, final_summary
+from core.summarizer import summarize_chunks, final_summary,qa_pipeline
+
 from utils.cleaner import clean_text
 
 from core.embeddings import get_embeddings, model
@@ -53,7 +54,13 @@ if uploaded_file:
 
     if query:
         relevant_chunks = retrieve_chunks(query, model, index, chunks)
-        answer = summarize_chunks(relevant_chunks)
+
+        context = " ".join(relevant_chunks)
+
+        result = qa_pipeline(
+            question=query,
+            context=context
+        )
 
         st.write("🧠 Answer:")
-        st.write(answer)
+        st.write(result["answer"])
