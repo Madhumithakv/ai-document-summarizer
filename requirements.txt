@@ -1,9 +1,17 @@
+# streamlit
+# transformers==4.41.2
+# torch==2.2.2
+# torchvision==0.17.2
+# pymupdf
+# sentence-transformers
+# faiss-cpu==1.7.4
+# accelerate
+# sentencepiece
+
+
 streamlit
-transformers==4.41.2
-torch==2.2.2
-torchvision==0.17.2
+transformers
 pymupdf
 sentence-transformers
-faiss-cpu==1.7.4
-accelerate
+faiss-cpu
 sentencepiece

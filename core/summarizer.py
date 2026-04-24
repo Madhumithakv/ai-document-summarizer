@@ -4,12 +4,14 @@ from transformers import pipeline
 
 qa_pipeline = pipeline(
     "question-answering",
-    model="deepset/roberta-base-squad2"
+    model="deepset/roberta-base-squad2",
+    device=-1
 )
 
 summarizer = pipeline(
     "summarization",
-    model="sshleifer/distilbart-cnn-12-6"
+    model="sshleifer/distilbart-cnn-12-6",
+    device=-1
 )
 
 def summarize_chunks(chunks):
